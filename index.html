@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Punch‑n‑Hit 🥊</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="app">
+
+  <!-- ── UPLOAD SCREEN ─────────────────────────────── -->
+  <section id="upload-screen" class="screen active">
+    <header class="logo">
+      <span class="logo-fist">🥊</span>
+      <h1>Punch‑n‑Hit</h1>
+      <p>Upload a face &amp; start punching!</p>
+    </header>
+
+    <div id="drop-zone" tabindex="0" role="button" aria-label="Upload image">
+      <span class="dz-icon">📸</span>
+      <p>Tap / Click to upload a photo</p>
+      <small>Drag &amp; drop also works</small>
+      <input id="file-input" type="file" accept="image/*" hidden />
+    </div>
+
+    <div id="preview-section" hidden>
+      <p id="face-status" class="face-status">Detecting face…</p>
+      <canvas id="preview-canvas" width="160" height="160" aria-label="Face preview"></canvas>
+      <div id="skin-picker">
+        <p>Choose a chibi character:</p>
+        <div class="skin-list" role="listbox">
+          <button class="skin-btn active" data-skin="0" title="Warrior">⚔️</button>
+          <button class="skin-btn" data-skin="1" title="Mage">🧙</button>
+          <button class="skin-btn" data-skin="2" title="Ninja">🥷</button>
+          <button class="skin-btn" data-skin="3" title="Archer">🏹</button>
+          <button class="skin-btn" data-skin="4" title="Brawler">🥊</button>
+          <button class="skin-btn" data-skin="5" title="Knight">🛡️</button>
+          <button class="skin-btn" data-skin="random" title="Random">🎲</button>
+        </div>
+      </div>
+      <button id="start-btn" class="btn btn-primary">🎮 Start Punching!</button>
+    </div>
+  </section>
+
+  <!-- ── GAME SCREEN ────────────────────────────────── -->
+  <section id="game-screen" class="screen">
+    <div class="game-hud">
+      <button id="back-btn" class="btn btn-ghost">⬅ New Face</button>
+      <div class="hp-wrap" aria-label="HP bar">
+        <span>❤️</span>
+        <div class="hp-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
+          <div id="hp-fill" class="hp-fill"></div>
+        </div>
+        <span id="hp-num">100</span>
+      </div>
+      <span id="combo-label"></span>
+    </div>
+
+    <div id="arena">
+      <canvas id="game-canvas" width="320" height="460"
+              aria-label="Game arena – tap to punch!"
+              role="img"></canvas>
+      <div id="fx" aria-hidden="true"></div>
+      <div id="ko-overlay" hidden aria-live="assertive">
+        <div class="ko-box">
+          <div class="ko-title">K.O.!</div>
+          <div class="ko-stars">⭐⭐⭐</div>
+          <p>You knocked them out! 💪</p>
+          <button id="next-btn" class="btn btn-primary">🔄 New Round</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="game-footer">
+      <span>Tap / Click to punch! 🥊</span>
+      <span id="hit-tally">0 hits</span>
+    </footer>
+  </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
