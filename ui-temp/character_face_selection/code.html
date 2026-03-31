@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KINETIC COMIC - Character Creator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#eee686",
+              "surface-variant": "#f3eb91",
+              "on-primary-fixed-variant": "#665500",
+              "surface-container-low": "#fffae1",
+              "surface-container-lowest": "#ffffff",
+              "primary-dim": "#695700",
+              "primary-fixed": "#ffd709",
+              "background": "#fffbff",
+              "on-background": "#3d3905",
+              "inverse-on-surface": "#a59f61",
+              "on-surface": "#3d3905",
+              "error-dim": "#b92902",
+              "on-secondary-fixed": "#00326f",
+              "primary-fixed-dim": "#efc900",
+              "primary-container": "#ffd709",
+              "on-primary-fixed": "#453900",
+              "on-error": "#ffffff",
+              "outline": "#878248",
+              "tertiary-dim": "#a92500",
+              "on-tertiary-container": "#621200",
+              "surface-container-high": "#f9f19b",
+              "error-container": "#f95630",
+              "outline-variant": "#c2bb7b",
+              "surface-container": "#fef6a5",
+              "secondary-dim": "#0055b4",
+              "on-secondary": "#ffffff",
+              "surface-tint": "#776300",
+              "on-primary-container": "#5b4b00",
+              "secondary-container": "#bed2ff",
+              "on-secondary-fixed-variant": "#004ea5",
+              "on-tertiary-fixed-variant": "#721600",
+              "on-surface-variant": "#6b662f",
+              "secondary": "#0061cb",
+              "surface-bright": "#fffbff",
+              "on-error-container": "#520c00",
+              "tertiary": "#bf2b00",
+              "tertiary-fixed": "#ff9479",
+              "inverse-surface": "#100f00",
+              "surface-container-highest": "#f3eb91",
+              "secondary-fixed": "#bed2ff",
+              "on-secondary-container": "#004594",
+              "tertiary-container": "#ff9479",
+              "secondary-fixed-dim": "#a8c4ff",
+              "tertiary-fixed-dim": "#ff7d5c",
+              "inverse-primary": "#ffd709",
+              "on-primary": "#ffffff",
+              "primary": "#776300",
+              "surface": "#fffbff",
+              "on-tertiary": "#ffffff",
+              "error": "#be2d06",
+              "on-tertiary-fixed": "#360600"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .comic-border {
+        box-shadow: 4px 4px 0px 0px #3d3905;
+      }
+      .comic-border-lg {
+        box-shadow: 8px 8px 0px 0px #3d3905;
+      }
+      .skew-slight {
+        transform: rotate(-1deg);
+      }
+      .skew-opposite {
+        transform: rotate(1deg);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-yellow-50 dark:bg-stone-900 shadow-[4px_4px_0px_0px_rgba(119,99,0,1)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full border-2 border-primary bg-primary-container overflow-hidden">
+<img alt="Chibi Player Avatar" data-alt="close-up of a cute stylized chibi character head with expressive eyes and colorful hair in a cartoon comic style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC94bPOQNBL9FldxKqw2CepsPqVDL27IYv06xYq9bTIhJhXoq0Iimhfbmzdxfy5r18EwyIoypamz67ezmon15tU6Csit_9Gf3wONi6CZzH_N4BpAOO3gP12lqXs5sWhoeNPoKHNGCGLcMh44CvOoczQOBetstuHSy0jNoL6P0g1V2CYvdrGk7vyQDydTVC9jajVfwbs083UqNvIkECMDMXdjr_GT1bZzvmByiOzASzl1RwDjzelv4GWh3SXksiZK6Zxw5mPFQe-Zpc"/>
+</div>
+<h1 class="text-2xl font-black text-yellow-800 dark:text-yellow-400 italic font-headline uppercase tracking-tighter">KINETIC COMIC</h1>
+</div>
+<div class="bg-yellow-100 dark:bg-stone-800 px-4 py-1 rounded-full text-yellow-700 dark:text-yellow-400 font-headline font-black hover:scale-105 transition-transform active:scale-95 duration-100 ease-in-out cursor-pointer">
+            1,200G
+        </div>
+</header>
+<main class="pt-24 px-4 max-w-md mx-auto space-y-8">
+<!-- Instruction Section -->
+<section class="text-center space-y-2 py-4">
+<h2 class="font-headline font-black text-3xl text-primary leading-none uppercase tracking-tight skew-slight">
+                CHOOSE YOUR CHIBI!
+            </h2>
+<p class="font-body font-bold text-on-surface-variant text-sm px-8">
+                Pick your hero's outfit and put your face on it for the ultimate battle!
+            </p>
+</section>
+<!-- Preview Area (The Living Panel) -->
+<section class="relative bg-surface-container rounded-xl p-6 comic-border-lg border-4 border-on-background skew-opposite overflow-hidden">
+<div class="absolute top-2 right-4 bg-tertiary text-on-tertiary font-headline font-black px-4 py-1 rounded-sm -rotate-3 text-sm z-10">
+                PREVIEW!
+            </div>
+<div class="relative aspect-[3/4] bg-surface-container-lowest rounded-lg border-2 border-outline-variant flex items-center justify-center overflow-hidden">
+<!-- Chibi Body Base -->
+<div class="relative w-full h-full flex flex-col items-center justify-center p-8">
+<!-- Head Slot/Face Overlay Simulation -->
+<div class="absolute top-1/4 w-32 h-32 rounded-full border-4 border-dashed border-primary bg-primary-container/20 flex items-center justify-center z-20 overflow-hidden">
+<div class="text-center p-2">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="face">face</span>
+<p class="text-[10px] font-bold text-primary-dim uppercase">Your Face Here</p>
+</div>
+</div>
+<!-- Body Placeholder -->
+<img alt="Selected Character Body" class="w-48 h-auto mt-12" data-alt="chibi character body wearing a white karate gi with a black belt in a dynamic martial arts pose cartoon style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaLh8AympisPZnzJ7B1EVK9CIWyNT9XMYLs3Kk8fjGZZOBPtLK07ULwV34zC6nTBEXLnH-fwbLH_vwyiZyfbm_mx7atGlwQ7ackcfCFe85SQAnCdAip7ST4vRI7xVJVmE2oxbjLPefngrfuUPb62oXjM16t-L8k0h0QRiX0xZxwKuTBGPHn_qK3irerOXb3M8tet2ysWyXJ7KyPnmHbrQ0mXCq_apjhZF6RW0M9vTx_CyDb-pMUYfoRZ1CQlKf5PKplQUbwvsfTRU"/>
+</div>
+</div>
+</section>
+<!-- Action Buttons -->
+<section class="grid grid-cols-2 gap-4 px-2">
+<button class="bg-primary-container hover:scale-105 active:scale-95 transition-all p-4 rounded-xl comic-border border-4 border-on-background flex flex-col items-center justify-center gap-2 group">
+<div class="bg-on-primary-container text-primary-container p-2 rounded-full group-hover:rotate-12 transition-transform">
+<span class="material-symbols-outlined" data-icon="photo_camera" style="font-variation-settings: 'FILL' 1;">photo_camera</span>
+</div>
+<span class="font-headline font-black text-xs uppercase tracking-wider text-on-primary-container">TAKE PHOTO</span>
+</button>
+<button class="bg-surface-container-high hover:scale-105 active:scale-95 transition-all p-4 rounded-xl comic-border border-4 border-on-background flex flex-col items-center justify-center gap-2 group">
+<div class="bg-on-surface-variant text-surface-container p-2 rounded-full group-hover:-rotate-12 transition-transform">
+<span class="material-symbols-outlined" data-icon="image" style="font-variation-settings: 'FILL' 1;">image</span>
+</div>
+<span class="font-headline font-black text-xs uppercase tracking-wider text-on-surface-variant">GALLERY</span>
+</button>
+</section>
+<!-- Character Carousel -->
+<section class="space-y-4">
+<h3 class="font-headline font-black text-lg text-on-surface ml-2">SELECT OUTFIT</h3>
+<div class="flex overflow-x-auto pb-6 gap-6 px-2 snap-x no-scrollbar">
+<!-- Karate Body -->
+<div class="snap-center shrink-0 w-32 aspect-square bg-surface-container-lowest border-4 border-primary rounded-xl comic-border flex items-center justify-center p-2 relative">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black px-2 py-0.5 rounded uppercase">KARATE</div>
+<img alt="Karate Outfit" class="h-20" data-alt="cartoon illustration of a karate martial arts uniform with a black belt on a transparent background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlGK8-j5e4FyS5Y6MnW78WYr_dFQ-pbk-87q2YyRicOPrFL4jX8ZjOaQjQKkpFot2b41Z5mH6Bbn-UGBE9Uis1rK7_icYhLwJu41B-sb2V1dB4gdzwzADUHr31vUK96ESJBuuDOffsLnya_8EmFoPOZtgMPxoHx5-UdZh89UAJWvhA2WQL3CXx96q3ueQOvv4L1AvRH0Hkqmnq36K0A9ic_m1nygHKuODsjmUqSxnWGBsDHEUnGqqJVEug1NA1ToncPvXyP86FY2s"/>
+</div>
+<!-- Hero Body -->
+<div class="snap-center shrink-0 w-32 aspect-square bg-surface-container-lowest border-4 border-outline-variant rounded-xl flex items-center justify-center p-2 relative opacity-60">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-outline-variant text-white text-[10px] font-black px-2 py-0.5 rounded uppercase">HERO</div>
+<img alt="Superhero Outfit" class="h-20 grayscale" data-alt="cartoon illustration of a superhero costume with a red cape and blue suit on a transparent background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-UQuVHbZmroQhHTlSFNIy7BPjicBY91MdsGE0pFsidZ5RizzWvg9UAi7jgbXO6cry3kOP30FNwfqI6RJFJSnqi4rmhpRBX-Ip43FnHAyXct-C3mtNXk9jKVBA_j19xCVuXgkNnnfx9m96KSkIxm2HW6jxQRt_7FIa1cD2HR5-yQgMhOuuf_WpDRD6bclbDrqwmz7wujx24RO5O3PkMC-rOsagnDGOR4j38eVh_LRN9xX1lA-NO5-g28V2PK2OROt7umlOAy4Sgko"/>
+</div>
+<!-- Casual Body -->
+<div class="snap-center shrink-0 w-32 aspect-square bg-surface-container-lowest border-4 border-outline-variant rounded-xl flex items-center justify-center p-2 relative opacity-60">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-outline-variant text-white text-[10px] font-black px-2 py-0.5 rounded uppercase">CASUAL</div>
+<img alt="Casual Outfit" class="h-20 grayscale" data-alt="cartoon illustration of a trendy hoodie and jeans outfit for a chibi character on a transparent background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkXKR6LyGGhKk0XdqHEhMqfuDnWimUGd2rLiEP9OKyHJ9TXGigxp0qfEjYccuwjj4rBK3xUqtdlScfinyYrnQDvAg5DOcasWgivI3ZSjc91z-b7XTPdlzdK1mc-kfl055P_sqRgj8nqcGQ4FbYj1yED7Epwcbs_mSABm0bmkItQ9Hc3pYhzRHXzIKzZF-F2RaSP2UvMXNWvQZnjnM2ZYKHA9UTBCJxLVEEhhHtF9faVHwpUuiaz7W8a6BGshmzhmAQe_Ngtx-wafE"/>
+</div>
+</div>
+</section>
+<!-- Big Confirmation Button -->
+<section class="pb-12">
+<button class="w-full bg-tertiary hover:scale-105 active:scale-95 transition-all text-on-tertiary font-headline font-black text-2xl py-6 rounded-xl border-4 border-on-background comic-border-lg uppercase tracking-widest flex items-center justify-center gap-4">
+                READY TO PUNCH!
+                <span class="material-symbols-outlined text-4xl" data-icon="sports_martial_arts">sports_martial_arts</span>
+</button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-end pb-6 px-4 h-24 bg-yellow-400 dark:bg-stone-800 rounded-t-[3rem] border-t-4 border-yellow-800 shadow-[0_-4px_0px_0px_rgba(119,99,0,0.2)]">
+<div class="flex flex-col items-center justify-center text-yellow-900 dark:text-yellow-500 opacity-80 hover:opacity-100 hover:scale-105 transition-all">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-plus-jakarta font-bold text-[10px] tracking-widest">HOME</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-yellow-800 text-yellow-400 rounded-full px-6 py-2 scale-110 -translate-y-2 shadow-lg transition-all">
+<span class="material-symbols-outlined" data-icon="swords" style="font-variation-settings: 'FILL' 1;">swords</span>
+<span class="font-plus-jakarta font-bold text-[10px] tracking-widest">BATTLE</span>
+</div>
+<div class="flex flex-col items-center justify-center text-yellow-900 dark:text-yellow-500 opacity-80 hover:opacity-100 hover:scale-105 transition-all">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-plus-jakarta font-bold text-[10px] tracking-widest">SHOP</span>
+</div>
+<div class="flex flex-col items-center justify-center text-yellow-900 dark:text-yellow-500 opacity-80 hover:opacity-100 hover:scale-105 transition-all">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-plus-jakarta font-bold text-[10px] tracking-widest">RANK</span>
+</div>
+</nav>
+</body></html>

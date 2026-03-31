@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KINETIC COMIC - BATTLE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .comic-text-stroke {
+            -webkit-text-stroke: 2px #3d3905;
+        }
+        .comic-panel-tilt {
+            transform: rotate(-1deg);
+        }
+        .hit-effect {
+            filter: drop-shadow(4px 4px 0px #776300);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#eee686",
+                        "surface-variant": "#f3eb91",
+                        "on-primary-fixed-variant": "#665500",
+                        "surface-container-low": "#fffae1",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-dim": "#695700",
+                        "primary-fixed": "#ffd709",
+                        "background": "#fffbff",
+                        "on-background": "#3d3905",
+                        "inverse-on-surface": "#a59f61",
+                        "on-surface": "#3d3905",
+                        "error-dim": "#b92902",
+                        "on-secondary-fixed": "#00326f",
+                        "primary-fixed-dim": "#efc900",
+                        "primary-container": "#ffd709",
+                        "on-primary-fixed": "#453900",
+                        "on-error": "#ffffff",
+                        "outline": "#878248",
+                        "tertiary-dim": "#a92500",
+                        "on-tertiary-container": "#621200",
+                        "surface-container-high": "#f9f19b",
+                        "error-container": "#f95630",
+                        "outline-variant": "#c2bb7b",
+                        "surface-container": "#fef6a5",
+                        "secondary-dim": "#0055b4",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#776300",
+                        "on-primary-container": "#5b4b00",
+                        "secondary-container": "#bed2ff",
+                        "on-secondary-fixed-variant": "#004ea5",
+                        "on-tertiary-fixed-variant": "#721600",
+                        "on-surface-variant": "#6b662f",
+                        "secondary": "#0061cb",
+                        "surface-bright": "#fffbff",
+                        "on-error-container": "#520c00",
+                        "tertiary": "#bf2b00",
+                        "tertiary-fixed": "#ff9479",
+                        "inverse-surface": "#100f00",
+                        "surface-container-highest": "#f3eb91",
+                        "secondary-fixed": "#bed2ff",
+                        "on-secondary-container": "#004594",
+                        "tertiary-container": "#ff9479",
+                        "secondary-fixed-dim": "#a8c4ff",
+                        "tertiary-fixed-dim": "#ff7d5c",
+                        "inverse-primary": "#ffd709",
+                        "on-primary": "#ffffff",
+                        "primary": "#776300",
+                        "surface": "#fffbff",
+                        "on-tertiary": "#ffffff",
+                        "error": "#be2d06",
+                        "on-tertiary-fixed": "#360600"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-dim font-body text-on-surface overflow-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-yellow-50 dark:bg-stone-900 shadow-[4px_4px_0px_0px_rgba(119,99,0,1)]">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full border-4 border-primary bg-surface-container-highest overflow-hidden">
+<img alt="Chibi Player Avatar" data-alt="Close up of a cute chibi character with large expressive eyes and colorful hair against a comic dot background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeIeFfgKLWPCKPjtVs14SUqnPGp00lvTPb1r4bH465hToZNeSiJ9GQbb6RzIKN6OpkSO02WYw03pel3XpGhTPzbdN0-93EU1gKXc_GHzwHXiwkj-fr5EcrsB7dkL8Sxcy7_Vvk85hO721-MXceys8_eXBVo7IZfZyQ8g2N_a6GpzMFaWjxuEUWDbMvsxgcULSm30CguGjPmc9KDQOeVlLaFOXHa6G-QhXI4cz_eL_yhB-pMH13hcvFoc4WCmOEzrK3daO9MQiz7TI"/>
+</div>
+<h1 class="font-headline font-black uppercase tracking-tighter text-2xl text-yellow-800 dark:text-yellow-400 italic">KINETIC COMIC</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex flex-col items-end">
+<span class="text-[10px] font-black uppercase tracking-widest text-primary">High Score</span>
+<span class="font-headline font-black text-xl text-on-surface">45,900</span>
+</div>
+<div class="bg-primary-container px-4 py-1 rounded-lg shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">payments</span>
+<span class="font-headline font-black text-on-primary-container uppercase tracking-tighter">1,200G</span>
+</div>
+</div>
+</header>
+<main class="relative w-full h-screen pt-24 pb-32 flex flex-col items-center justify-center overflow-hidden">
+<!-- Background Layer -->
+<div class="absolute inset-0 z-0 opacity-40 mix-blend-multiply">
+<img alt="Background" class="w-full h-full object-cover" data-alt="Dynamic comic book style training dojo with dark wooden floors, red banners with ink strokes, and dramatic rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuaIQZIhImTNb1aoTpN8hHA31-SBopQ6pGJThfuw-wpdT11D_7bzbmFkCCnIDO4BJO6ezj5J8iG4lvvb9kHL9aMnHwtra5fASqEPNL-F39rmWlVqGN6bmRRWbQrsWtD6NgKSXy1LPjqKmgnwD1SNSTUz-MVlpaepRxnENcfpqsipxVyFOJLf4lESJgR1ZYrkMKvyEr1R57bKQ2HiFatqeIdkYVL_G_1uxNPDtiuxyM8fU6zh-_30Twi6BAh64eWSUdhyJ-pGUAYPc"/>
+</div>
+<!-- Combat HUD: Top Stats -->
+<div class="relative z-20 w-full max-w-4xl px-6 flex flex-col gap-4">
+<!-- Health Bars Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+<!-- Character Health -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-end px-2">
+<span class="font-headline font-black text-on-background tracking-tight uppercase text-lg italic">PLAYER HP</span>
+<span class="font-headline font-black text-on-background">75%</span>
+</div>
+<div class="h-8 w-full bg-surface-container-highest rounded-full border-4 border-on-surface overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]">
+<div class="h-full bg-gradient-to-r from-tertiary to-primary w-3/4 rounded-full"></div>
+</div>
+</div>
+<!-- Boss/Stress Health -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-end px-2">
+<span class="font-headline font-black text-tertiary tracking-tight uppercase text-lg italic">STRESS LEVEL</span>
+<span class="font-headline font-black text-tertiary">42%</span>
+</div>
+<div class="h-8 w-full bg-surface-container-highest rounded-full border-4 border-on-surface overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,0.1)]">
+<div class="h-full bg-gradient-to-r from-error to-tertiary-container w-[42%] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Timer and Score Mid-Bar -->
+<div class="flex justify-center -mt-2">
+<div class="bg-on-surface text-surface-bright px-8 py-2 rounded-xl comic-panel-tilt shadow-xl flex items-center gap-6">
+<div class="flex flex-col items-center">
+<span class="text-[10px] font-bold uppercase tracking-widest opacity-70">TIME</span>
+<span class="font-headline font-black text-2xl leading-none">01:24</span>
+</div>
+<div class="w-px h-8 bg-surface-variant opacity-30"></div>
+<div class="flex flex-col items-center text-primary-fixed">
+<span class="text-[10px] font-bold uppercase tracking-widest opacity-70">SCORE</span>
+<span class="font-headline font-black text-2xl leading-none">12,450</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Combat Stage -->
+<div class="relative z-10 flex-1 w-full flex items-center justify-center pointer-events-none">
+<!-- COMBO COUNTER -->
+<div class="absolute left-8 top-1/4 -rotate-12 pointer-events-none">
+<div class="flex flex-col items-start scale-110">
+<span class="bg-tertiary text-white font-headline font-black px-4 py-1 text-sm tracking-widest uppercase mb-[-10px] ml-4 z-10 rounded-sm">AWESOME!</span>
+<h2 class="font-headline font-black text-8xl text-primary-fixed comic-text-stroke drop-shadow-[6px_6px_0px_#5b4b00] tracking-tighter">x15 COMBO</h2>
+</div>
+</div>
+<!-- Character Sprite Container -->
+<div class="relative w-72 h-72 md:w-96 md:h-96 flex items-center justify-center">
+<!-- Hit Effects (Floating) -->
+<div class="absolute -top-10 -right-10 bg-white border-4 border-on-background px-6 py-2 rounded-full rotate-12 hit-effect z-30">
+<span class="font-headline font-black text-3xl text-tertiary uppercase">POW!</span>
+</div>
+<div class="absolute top-1/2 -left-20 bg-primary-container border-4 border-on-background px-6 py-2 rounded-full -rotate-12 hit-effect z-30">
+<span class="font-headline font-black text-3xl text-on-primary-container uppercase">BAM!</span>
+</div>
+<div class="absolute -bottom-4 right-0 bg-secondary border-4 border-on-background px-4 py-1 rounded-full rotate-6 hit-effect z-30">
+<span class="font-headline font-black text-2xl text-white uppercase">ZAP!</span>
+</div>
+<!-- Stars Effect -->
+<div class="absolute inset-0 animate-pulse pointer-events-none">
+<span class="material-symbols-outlined absolute top-0 left-1/4 text-primary-fixed text-4xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined absolute top-1/4 right-0 text-primary-fixed text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined absolute bottom-1/4 left-0 text-primary-fixed text-3xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<!-- The Battered Chibi Character -->
+<div class="relative w-full h-full flex items-center justify-center comic-panel-tilt">
+<img alt="Battered Chibi" class="w-full h-full object-contain drop-shadow-2xl" data-alt="Full body chibi character with cartoon bandages on head and arms, a small bruise under one eye, dizzy swirls, looking funny and determined in comic style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlJ3FIbNLf7R00cA-tRjkLozXg4712Wa1KA8b5NxPe4CcnOt78A6ulo9rrxJG-QkXKoGy_HSeNIMVgUTgmEoP8aIzQ6Px7Y41iRzr-1wiuXlYn_8RTfhurOElHdTOnyzIAsQNIOpo-pAgg-dKSLosVxHPhb_2BwzWQPijQQCkw-xb02ZyPjDkIXISckRjgdGiSXNOXvy9PK38ZKmF4nUtNL1bkOeWhsXPKZRDqbCmCex8D9G_0s5mF6w55XiMEydlVhHQi5la_isY"/>
+</div>
+</div>
+</div>
+<!-- Controls Floating -->
+<div class="fixed bottom-32 left-0 w-full px-8 flex justify-between items-center z-40 pointer-events-none">
+<button class="pointer-events-auto group active:scale-95 transition-transform duration-100 bg-primary-container text-on-primary-container w-32 h-32 md:w-40 md:h-40 rounded-full border-8 border-on-background shadow-[8px_8px_0px_0px_#776300] flex flex-col items-center justify-center gap-1 hover:scale-105">
+<span class="material-symbols-outlined text-5xl group-hover:rotate-12 transition-transform">front_hand</span>
+<span class="font-headline font-black text-xl tracking-tighter">PUNCH</span>
+</button>
+<button class="pointer-events-auto group active:scale-95 transition-transform duration-100 bg-secondary text-white w-32 h-32 md:w-40 md:h-40 rounded-full border-8 border-on-background shadow-[8px_8px_0px_0px_#00326f] flex flex-col items-center justify-center gap-1 hover:scale-105">
+<span class="material-symbols-outlined text-5xl group-hover:-rotate-12 transition-transform">footprint</span>
+<span class="font-headline font-black text-xl tracking-tighter">KICK</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-end pb-6 px-4 h-24 bg-yellow-400 dark:bg-stone-800 rounded-t-[3rem] border-t-4 border-yellow-800 shadow-[0_-4px_0px_0px_rgba(119,99,0,0.2)]">
+<a class="flex flex-col items-center justify-center text-yellow-900 dark:text-yellow-500 opacity-80 hover:opacity-100 hover:scale-105 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-headline font-bold text-[10px] tracking-widest mt-1">HOME</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-yellow-800 text-yellow-400 rounded-full px-6 py-2 scale-110 -translate-y-2 shadow-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="swords" style="font-variation-settings: 'FILL' 1;">swords</span>
+<span class="font-headline font-bold text-[10px] tracking-widest mt-1">BATTLE</span>
+</a>
+<a class="flex flex-col items-center justify-center text-yellow-900 dark:text-yellow-500 opacity-80 hover:opacity-100 hover:scale-105 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-headline font-bold text-[10px] tracking-widest mt-1">SHOP</span>
+</a>
+<a class="flex flex-col items-center justify-center text-yellow-900 dark:text-yellow-500 opacity-80 hover:opacity-100 hover:scale-105 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-headline font-bold text-[10px] tracking-widest mt-1">RANK</span>
+</a>
+</nav>
+</body></html>
